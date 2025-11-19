@@ -1,0 +1,13 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Sensitive config (not needed anymore if using .env)
+config/dev.js
+config/prod.js
+
+# Optional ignore (if you want)
+npm-debug.log
+yarn-error.log
