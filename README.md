@@ -78,8 +78,7 @@ Git & GitHub
 Cloud-based MongoDB
 
 📂 Project Structure
-csharp
-Copy code
+
 BugView/
  ├── client/               # React frontend
  │    ├── src/
@@ -92,6 +91,7 @@ BugView/
  ├── server.js             # Backend entry point
  ├── package.json          # Root package file
  └── README.md
+ 
 ⚙️ Setup Instructions (Very Important)
 
 1️⃣ Install Backend Dependencies
@@ -99,16 +99,16 @@ BugView/
 Run this in the main project folder:
 npm install
 
-2️⃣ Install Frontend Dependencies
-cd client
+2️⃣ Install Frontend Dependencies:
+cd client,
 npm install
 Then return to the root:
 
 
 cd ..
-3️⃣ Create Environment Variables
+3️⃣ Create Environment Variables:
 Create a .env file in the project root (NOT inside client):
-MONGO_URL=your_mongodb_connection_string
+MONGO_URL=your_mongodb_connection_string,
 JWT_SECRET=your_secret_key_here
 
 
@@ -131,7 +131,7 @@ Create a Database User
 Copy connection string like:
 mongodb+srv://<username>:<password>@cluster.mongodb.net/BugView
 Paste it into your .env:
-MONGO_URL=YOUR_URL_HERE
+MONGO_URL=YOUR_URL_HERE,
 Ensure IP Allow Access = “Allow from Anywhere”
 
 🎯 Purpose of BugView
