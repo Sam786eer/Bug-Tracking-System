@@ -93,36 +93,27 @@ BugView/
  ├── package.json          # Root package file
  └── README.md
 ⚙️ Setup Instructions (Very Important)
-1️⃣ Install Backend Dependencies
-Run this in the main project folder:
 
-nginx
-Copy code
+1️⃣ Install Backend Dependencies
+
+Run this in the main project folder:
 npm install
+
 2️⃣ Install Frontend Dependencies
-bash
-Copy code
 cd client
 npm install
 Then return to the root:
 
-bash
-Copy code
+
 cd ..
 3️⃣ Create Environment Variables
 Create a .env file in the project root (NOT inside client):
-
-ini
-Copy code
 MONGO_URL=your_mongodb_connection_string
 JWT_SECRET=your_secret_key_here
-⚠️ .env is already in .gitignore, so it will NOT upload to GitHub.
+
 
 4️⃣ Start the Application (Backend + Frontend Together)
 Simply run:
-
-arduino
-Copy code
 npm run start
 This will:
 
@@ -138,14 +129,8 @@ Create a free cluster
 Create a Database User
 
 Copy connection string like:
-
-perl
-Copy code
 mongodb+srv://<username>:<password>@cluster.mongodb.net/BugView
 Paste it into your .env:
-
-ini
-Copy code
 MONGO_URL=YOUR_URL_HERE
 Ensure IP Allow Access = “Allow from Anywhere”
 
