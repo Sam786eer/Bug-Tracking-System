@@ -101,7 +101,7 @@ npm install
 
 2️⃣ Install Frontend Dependencies:
 cd client,
-npm install
+npm install. 
 Then return to the root:
 
 
@@ -114,7 +114,7 @@ JWT_SECRET=your_secret_key_here
 
 4️⃣ Start the Application (Backend + Frontend Together)
 Simply run:
-npm run start
+npm run start. 
 This will:
 
 Start backend → http://localhost:5000
