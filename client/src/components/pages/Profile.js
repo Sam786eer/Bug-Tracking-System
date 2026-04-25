@@ -130,6 +130,8 @@ const Profile = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log("API VALUE:", API);
+           console.log("UPDATE IMAGE URL:", `${API}/updateimage`);
           fetch(`${API}/updateimage`, {
             method: 'PUT',
             headers: {
