@@ -14,9 +14,11 @@ const CreatePost = () => {
   const [status, setStatus] = useState('');
   const [language, setLanguage] = useState('');
   const [framework, setFramework] = useState('');
+  const API = process.env.REACT_APP_API_URL;
+
 
   const postDetails = () => {
-    fetch('/createpost', {
+    fetch(`${API}/createpost`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

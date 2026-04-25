@@ -7,10 +7,12 @@ const NewPassword = () => {
     const [password, setPassword] = useState(''); 
 
     const { token } = useParams(); 
+    const API = process.env.REACT_APP_API_URL;
+
 
     const PostData = () => {
 
-        fetch('/new-password', {
+        fetch(`${API}/new-password`, {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'

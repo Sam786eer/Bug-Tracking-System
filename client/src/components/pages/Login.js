@@ -8,6 +8,7 @@ const Login = () => {
     const history = useHistory(); 
     const [email, setEmail] = useState(''); 
     const [password, setPassword] = useState(''); 
+    const API = process.env.REACT_APP_API_URL;
 
     const PostData = () => {
         if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
@@ -15,7 +16,7 @@ const Login = () => {
             return 
         }
 
-        fetch('/signin', {
+        fetch(`${API}/signin`, {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'

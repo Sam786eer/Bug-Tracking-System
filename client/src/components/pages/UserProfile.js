@@ -6,11 +6,12 @@ const Profile = () => {
     const [userProfile, setUserProfile] = useState(null);
     const { state, dispatch } = useContext(UserContext); 
     const { userid } = useParams(); 
+     const API = process.env.REACT_APP_API_URL;
     const [showFollow, setShowFollow] = useState(state ? !state.following.includes(userid) : true);
 
     useEffect(() => {       
 
-        fetch(`/user/${userid}`, {
+        fetch(`${API}/user/${userid}`, {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('jwt')
             }
@@ -21,7 +22,7 @@ const Profile = () => {
     }, [])
 
     const followUser = () => {
-        fetch('/follow', {
+        fetch(`${API}/follow`, {
             method: 'PUT', 
             headers: {
                 'Content-Type': 'application/json', 
@@ -47,7 +48,7 @@ const Profile = () => {
     })}
 
     const unfollowUser = () => {
-        fetch('/unfollow', {
+        fetch(`${API}/unfollow`, {
             method: 'PUT', 
             headers: {
                 'Content-Type': 'application/json', 

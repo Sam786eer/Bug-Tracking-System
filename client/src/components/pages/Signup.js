@@ -11,6 +11,7 @@ const Signup = () => {
     const [password, setPassword] = useState(''); 
     const [image, setImage] = useState('') ;
     const [url, setUrl] = useState(undefined); 
+    const API = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         if (url) {
@@ -42,7 +43,7 @@ const Signup = () => {
             return 
         }
 
-        fetch('/signup', {
+        fetch(`${API}/signup`, {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'

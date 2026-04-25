@@ -6,6 +6,8 @@ import M from 'materialize-css';
 const Reset = () => {
     const history = useHistory(); 
     const [email, setEmail] = useState(''); 
+    const API = process.env.REACT_APP_API_URL;
+
 
     const PostData = () => {
         if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
@@ -13,7 +15,7 @@ const Reset = () => {
             return 
         }
 
-        fetch('/reset-password', {
+        fetch(`${API}/reset-password`, {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'

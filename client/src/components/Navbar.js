@@ -9,6 +9,7 @@ const Navbar = () => {
   const searchModal = useRef(null);
   const [search, setSearch] = useState("");
   const [userDetails, setUserDetails] = useState([]);
+   const API = process.env.REACT_APP_API_URL;
   const { state, dispatch } = useContext(UserContext);
 
   // Initialize Materialize modal only once
@@ -72,7 +73,7 @@ const Navbar = () => {
   // Fetch users for search modal
   const fetchUsers = (query) => {
     setSearch(query);
-    fetch("/search", {
+    fetch(`${API}/search`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query }),

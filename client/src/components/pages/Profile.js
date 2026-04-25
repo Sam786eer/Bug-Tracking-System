@@ -20,13 +20,15 @@ const Profile = () => {
   const [severity, setSeverity] = useState('');
   const [status, setStatus] = useState('');
   const [currentId, setCurrentId] = useState('');
+  const API = process.env.REACT_APP_API_URL;
+
 
   // Profile image
   const [image, setImage] = useState('');
 
   // Fetch user's tickets
   useEffect(() => {
-    fetch('/mypost', {
+    fetch(`${API}/mypost`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('jwt'),
       },
@@ -58,7 +60,7 @@ const Profile = () => {
   const updateDetails = () => {
     if (!currentId) return;
 
-    fetch(`/updatepost/${currentId}`, {
+    fetch(`${API}/updatepost/${currentId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -100,7 +102,7 @@ const Profile = () => {
 
   //  DELETE POST
   const deletePost = (postid) => {
-    fetch(`/deletepost/${postid}`, {
+    fetch(`${API}/deletepost/${postid}`, {
       method: 'DELETE',
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('jwt'),

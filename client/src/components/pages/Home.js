@@ -66,13 +66,15 @@ const Home = () => {
     const [django, setDjango] = useState([]); 
     const [flask, setFlask] = useState([]); 
     const [angular, setAngular] = useState([]); 
+    const API = process.env.REACT_APP_API_URL;
+
 
 
     
 
                     
     useEffect(() => {
-        fetch('/allpost', {
+        fetch(`${API}/allpost`, {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('jwt')
             }

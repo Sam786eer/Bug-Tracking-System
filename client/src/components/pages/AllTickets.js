@@ -21,6 +21,8 @@ const AllTickets = () => {
   const [currentId, setCurrentId] = useState("");
 
   const modalRef = useRef(null);
+  const API = process.env.REACT_APP_API_URL;
+
 
   //  Initialize Materialize modal once
   useEffect(() => {
@@ -31,7 +33,7 @@ const AllTickets = () => {
 
   //  Fetch all posts
   useEffect(() => {
-    fetch("/allpost", {
+    fetch(`${API}/allpost`, {
       headers: { Authorization: "Bearer " + localStorage.getItem("jwt") },
     })
       .then((res) => res.json())
@@ -60,7 +62,7 @@ const AllTickets = () => {
   const updateDetails = () => {
     if (!currentId) return;
 
-    fetch(`/updatepost/${currentId}`, {
+    fetch(`${API}/updatepost/${currentId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -103,7 +105,7 @@ const AllTickets = () => {
 
   //  Delete post
   const deletePost = (postid) => {
-    fetch(`/deletepost/${postid}`, {
+    fetch(`${API}/deletepost/${postid}`, {
       method: "DELETE",
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwt"),

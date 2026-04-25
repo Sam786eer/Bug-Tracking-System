@@ -10,6 +10,8 @@ const SubscribeUserPosts = () => {
   const [data, setData] = useState([]);
   const { state } = useContext(UserContext);
   const history = useHistory();
+  const API = process.env.REACT_APP_API_URL;
+
 
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -21,7 +23,7 @@ const SubscribeUserPosts = () => {
 
   // ✅ Fetch all followed users' tickets
   useEffect(() => {
-    fetch("/getsubpost", {
+    fetch(`${API}/getsubpost`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },
@@ -35,7 +37,7 @@ const SubscribeUserPosts = () => {
   }, []);
 
   const updateDetails = () => {
-    fetch("/createpost", {
+    fetch(`${API}/createpost`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -69,7 +71,7 @@ const SubscribeUserPosts = () => {
   };
 
   const deletePost = (postid) => {
-    fetch(`/deletepost/${postid}`, {
+    fetch(`${API}/deletepost/${postid}`, {
       method: "DELETE",
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
