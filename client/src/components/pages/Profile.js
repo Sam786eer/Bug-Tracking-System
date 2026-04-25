@@ -130,7 +130,7 @@ const Profile = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          fetch('/updateimage', {
+          fetch(`${API}/updateimage`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
