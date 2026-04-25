@@ -54,7 +54,7 @@ const Routing = () => {
       <Route path='/profile/:userid'>
         <UserProfile /> 
       </Route>
-      <Route path='//subscribedposts'>
+      <Route path='/subscribedposts'>
         <SubscribeUserPosts /> 
       </Route>
       <Route exact path='/reset'>

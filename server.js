@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const app = express();
 const path = require('path');
 require('dotenv').config();  // <-- Load .env
@@ -25,6 +26,7 @@ require('./models/User');
 require('./models/Post');
 
 // Middleware & Routes
+app.use(cors());
 app.use(express.json());
 app.use(require('./routes/auth'));
 app.use(require('./routes/post'));
