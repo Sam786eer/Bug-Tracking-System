@@ -136,7 +136,7 @@ const Profile = () => {
               'Content-Type': 'application/json',
               Authorization: 'Bearer ' + localStorage.getItem('jwt'),
             },
-            body: JSON.stringify({ image: data.url }),
+            body: JSON.stringify({ image: data.secure_url }),
           })
             .then((res) => res.json())
             .then((result) => {
