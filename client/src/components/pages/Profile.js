@@ -170,7 +170,7 @@ const Profile = () => {
               margin: 'auto',
               display: 'block',
             }}
-            src={state?.image}
+            src={state && state.image}
             alt="profile"
           />
           <div
@@ -187,21 +187,21 @@ const Profile = () => {
         <div style={{ textAlign: 'center' }}>
           <h5>
             <strong>Name: </strong>
-            {state?.firstName} {state?.lastName}
+            {state && state.firstName} {state && state.lastName}
           </h5>
           <h5>
             <strong>Email: </strong>
-            {state?.email}
+            {state && state.email}
           </h5>
           <h5>
             <strong>Job Title: </strong>
-            {state?.jobTitle}
+            {state && state.jobTitle}
           </h5>
           <h5>
             <strong>{myPosts.length}</strong> Ticket(s) Posted
           </h5>
           <h5>
-            <strong>{state?.following.length || 0}</strong> Associated Members
+            <strong>{(state && state.following ? state.following.length : 0)}</strong> Associated Members
           </h5>
         </div>
       </div>
