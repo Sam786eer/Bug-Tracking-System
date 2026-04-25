@@ -124,7 +124,7 @@ const Profile = () => {
       data.append('upload_preset', 'bugview');
       data.append('cloud_name', 'tk23');
 
-      fetch(`${API}/upload`, {
+      fetch('https://api.cloudinary.com/v1_1/tk23/image/upload', {
         method: 'POST',
         body: data,
       })
